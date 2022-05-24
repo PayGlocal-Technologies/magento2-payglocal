@@ -107,7 +107,7 @@ class Redirect extends PayGlocalPayment
             "merchantTxnId" => $order->getIncrementId(),
             "merchantUniqueId" => $order->getIncrementId() . '_' . $merchantUniqueId,
             "paymentData" => array(
-                "totalAmount" => number_format($order->getGrandTotal(), 2),
+                "totalAmount" => round($order->getGrandTotal(), 2),
                 "txnCurrency" => $order->getOrderCurrencyCode(),
                 "billingData" => [
                     "firstName" => $order->getBillingAddress()->getFirstname(),
